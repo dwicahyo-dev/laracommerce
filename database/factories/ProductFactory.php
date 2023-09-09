@@ -20,6 +20,7 @@ class ProductFactory extends Factory
         return [
             'name' => fake()->unique()->name(),
             'category_id' => Category::inRandomOrder()->first()->id,
+            'description' => fake()->text(),
             'image' => fake()->imageUrl(360, 360, 'animals', true, 'dogs', true, 'jpg'),
             'price' => fake()->numberBetween($min = 10, $max = 100)
         ];

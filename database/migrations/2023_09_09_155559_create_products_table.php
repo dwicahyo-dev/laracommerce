@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained();
             $table->string('name')->index();
+            $table->text('description');
             $table->decimal('price', 10, 2)->index();
             $table->string('image');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
