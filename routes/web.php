@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\ProductController as ControllersProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +21,7 @@ use Illuminate\Support\Facades\Route;
  */
 require __DIR__ . '/auth.php';
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ControllersProductController::class)->name('products.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
